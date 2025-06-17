@@ -6,12 +6,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import Card from '../components/card';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Svg, { Defs, LinearGradient as SvgGradient, Stop, Path } from 'react-native-svg';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStacParamsList } from '../App';
 
-type PayScreenProps = NativeStackScreenProps<RootStacParamsList, 'Pay'>
+import { RootTabParamsList  } from '../App';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
-const Pay = ({ navigation }: PayScreenProps) => {
+
+
+const Pay = () => {
 
   const [isFreezed, setIsFreezed] = useState<boolean>(true)
 
@@ -109,7 +110,6 @@ const Pay = ({ navigation }: PayScreenProps) => {
 
           <View style={styles.footerContainer}>
 
-
             <Svg
               height="60"
               width="100%"
@@ -130,71 +130,6 @@ const Pay = ({ navigation }: PayScreenProps) => {
                 fill="url(#fade)"
               />
             </Svg>
-
-            <View style={styles.footerBtnContainer}>
-              <LinearGradient
-                colors={['#fff', '#1a1a1a']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 0, y: 1 }}
-                style={{ width: 43, height: 41, borderRadius: 50, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', opacity: .7, marginTop: 10 }}
-              >
-                <Pressable
-                  onPress={() => navigation.navigate('Home')}
-                  style={{ backgroundColor: 'black', width: 41, height: 41, borderRadius: 51, marginTop: 1.6, alignItems: 'center', justifyContent: 'center' }}
-                >
-
-                  <FontAwesome
-                    name='home'
-                    size={24}
-                    color="#fff"
-                    style={{ elevation: 2 }}
-                  />
-
-                </Pressable>
-              </LinearGradient>
-
-              <LinearGradient
-                colors={['#fff', '#1a1a1a']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 0, y: 1 }}
-                style={{ width: 53, height: 51, borderRadius: 50, alignItems: 'center', justifyContent: 'center' }}
-              >
-                <Pressable
-                  onPress={() => navigation.navigate('Pay')}
-                  style={{ backgroundColor: 'black', width: 51, height: 51, borderRadius: 51, marginTop: 1.6, alignItems: 'center', justifyContent: 'center' }}
-                >
-
-                  <FontAwesome
-                    name='qrcode'
-                    size={20}
-                    color="#fff"
-                    style={{ elevation: 2 }}
-                  />
-
-                </Pressable>
-              </LinearGradient>
-
-              <LinearGradient
-                colors={['#fff', '#1a1a1a']}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 0, y: 1 }}
-                style={{ width: 43, height: 41, borderRadius: 50, alignItems: 'center', justifyContent: 'center', opacity: .7, marginTop: 10 }}
-              >
-                <Pressable
-                  onPress={() => navigation.navigate('Ginie')}
-                  style={{ backgroundColor: 'black', width: 41, height: 41, borderRadius: 51, marginTop: 1.6, alignItems: 'center', justifyContent: 'center' }}
-                >
-
-                  <FontAwesome
-                    name='percent'
-                    size={24}
-                    color="#fff"
-                    style={{ elevation: 2 }}
-                  />
-
-                </Pressable>
-              </LinearGradient>
-            </View>
 
           </View>
 

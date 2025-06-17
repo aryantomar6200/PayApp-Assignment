@@ -1,19 +1,20 @@
 import { StyleSheet, Text, View, Button, Pressable } from 'react-native'
 import React from 'react'
 import ScreenWrapper from '../components/ScreenWrapper'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { RootStacParamsList } from '../App'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-type HomeScreenProps = NativeStackScreenProps<RootStacParamsList, 'Home'>
+import { RootTabParamsList  } from '../App';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
 
-const Home = ({ navigation }: HomeScreenProps) => {
+
+
+const Home = () => {
   return (
     <ScreenWrapper>
 
-      <Pressable
-        onPress={() => navigation.pop()}
+      {/* <Pressable
+        onPress={() => navigation.navigate('Pay')}
         style={{ marginLeft: 25 }}
       >
         <FontAwesome
@@ -21,7 +22,7 @@ const Home = ({ navigation }: HomeScreenProps) => {
           color='#fff'
           size={30}
         />
-      </Pressable>
+      </Pressable> */}
 
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 
@@ -31,6 +32,7 @@ const Home = ({ navigation }: HomeScreenProps) => {
         }}>Home Screen</Text>
 
       </View>
+      
     </ScreenWrapper>
   )
 }
